@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 
 
+
 # Get a reference to webcam #0 (the default one)
 video_capture = cv2.VideoCapture(0)
 
@@ -14,14 +15,24 @@ obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
 biden_image = face_recognition.load_image_file("cle.png")
 biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
 
+jhun_img = face_recognition.load_image_file("jhun.jpg")
+jhun_face_encoding = face_recognition.face_encodings(jhun_img)[0]
+
+ian_img = face_recognition.load_image_file("ian.jpg")
+ian_face_encoding = face_recognition.face_encodings(ian_img)[0]
+
 # Create arrays of known face encodings and their names
 known_face_encodings = [
     obama_face_encoding,
-    biden_face_encoding
+    biden_face_encoding,
+    jhun_face_encoding,
+    ian_face_encoding
 ]
 known_face_names = [
     "DHON COMIA",
-    "CLEIGH"
+    "CLEIGH",
+    "JHUN",
+    "IAN"
 ]
 
 # Initialize some variables
